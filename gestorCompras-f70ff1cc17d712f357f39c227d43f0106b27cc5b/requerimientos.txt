@@ -1,0 +1,50 @@
+Forja metalica
+
+Insumos:
+- Acero
+
+Procesos:
+- Compra de acero
+
+Diferentes proveedores:
+- Brasil
+- Corea
+- Nacional
+
+Atributos del acero:
+- Grado de impureza
+- Calibre de las barras
+- Pedido por toneladas
+
+Envios:
+- Máximo 2 meses en entregarse
+
+Compra
+Automatizar proceso de aquisicion de acero:
+- Solicitud del acero
+- Conocer si está disponible o no
+- Fecha en que va a llegar
+- Notificaciones sobre el estado del envio del acero y retrasos (problemas aduanales, etc...)
+- Quien lo envia
+- Cuando lo envia
+- Rastrear el pedido del acero
+- Poder hacer devolución si no se está conforme
+
+--------------------------------------------------------------------------------------------------------------
+Colas de mensajería
+
+1.- ¿Qué servicios existentes necesitan modificación? si es necesario
+POST de compras
+
+2.- ¿Qué servicios sincronos deben crearse?
+0
+
+3.- ¿Qué servicios asincronos deben crearse?
+Proceso operativo autorización entrada/salida
+Proceso gerencial autorización entrada/salida
+
+Si monto <= 100,000 && Normal -> Operativo
+Si monto > 100,000 && Urgente -> Gerencial
+Si Urgente => Gerencial
+
+Crear 2 servicios, uno para la autorización de la compra y el otro para el pedido de la compra
